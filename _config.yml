@@ -1,0 +1,19 @@
+title: Hoda Rajaei, Ph.D.
+description: Research Scientist — multimodal perception & signal-analysis systems
+
+theme: jekyll-theme-minimal
+show_downloads: false
+
+# Project site (repo is not <user>.github.io), so pages are served under this path.
+baseurl: "/hoda1394.github.io-portfolio"
+
+logo: /assets/images/photo.jpg
+
+# Contact / social links used in _layouts/default.html
+email: rajaei.hoda@gmail.com
+linkedin_url: https://www.linkedin.com/in/hoda-rajaei-05784839/
+github_url: https://github.com/Hoda1394
+scholar_url: https://scholar.google.com/citations?user=UDcnkH0AAAAJ&hl=en
+
+plugins:
+  - jekyll-seo-tag

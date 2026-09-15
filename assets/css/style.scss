@@ -1,0 +1,44 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+
+.avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 20px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.social-links li {
+  margin: 0 0 6px;
+}
+
+.social-links a {
+  font-size: 13px;
+}
+
+section h2 {
+  margin-top: 40px;
+}
+
+section h2:first-child {
+  margin-top: 0;
+}
+
+.role-meta {
+  color: #999;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: -14px 0 10px;
+  display: block;
+}

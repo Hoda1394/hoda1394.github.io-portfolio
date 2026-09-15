@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoda Rajaei, Ph.D. — Research Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1418;
+    --ink-2:#161D22;
+    --paper:#F6F3EC;
+    --paper-2:#EDE9DE;
+    --amber:#E8A33D;
+    --amber-dim:#9C7128;
+    --teal:#28524F;
+    --slate:#8B93A0;
+    --slate-dark:#5B6470;
+    --line:rgba(232,163,61,0.18);
+    --line-paper:rgba(15,20,24,0.12);
+    --serif:'Fraunces', serif;
+    --sans:'IBM Plex Sans', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--amber);color:var(--ink);}
+
+  /* ---------- Layout shell ---------- */
+  .wrap{max-width:920px;margin:0 auto;padding:0 32px;}
+  section{padding:96px 0;}
+  @media(max-width:640px){
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,236,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-paper);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .nav-name{font-family:var(--mono);font-size:13px;letter-spacing:0.02em;color:var(--ink);text-decoration:none;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{font-family:var(--mono);font-size:13px;text-decoration:none;color:var(--slate-dark);transition:color .15s ease;}
+  .nav-links a:hover{color:var(--amber-dim);}
+  @media(max-width:640px){ .nav-links{gap:16px;} .nav-links a{font-size:11.5px;} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:120px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-wave{
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    opacity:0.9;
+  }
+  .hero-inner{position:relative;z-index:2;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--amber);
+    margin:0 0 22px;
+  }
+  h1.name{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(40px,7vw,68px);
+    line-height:1.04;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+  }
+  .hero p.lede{
+    font-size:18px;
+    color:#C9CFD6;
+    max-width:52ch;
+    margin:0 0 36px;
+  }
+  .hero-links{display:flex;flex-wrap:wrap;gap:22px;}
+  .hero-links a{
+    font-family:var(--mono);
+    font-size:13px;
+    text-decoration:none;
+    color:var(--paper);
+    border-bottom:1px solid var(--amber-dim);
+    padding-bottom:3px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .hero-links a:hover{color:var(--amber);border-color:var(--amber);}
+
+  /* ---------- Section headings ---------- */
+  .kicker{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--amber-dim);
+    margin:0 0 8px;
+  }
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(26px,3.4vw,34px);
+    margin:0 0 40px;
+    letter-spacing:-0.005em;
+  }
+
+  /* ---------- Summary ---------- */
+  .summary p{
+    font-size:19px;
+    line-height:1.7;
+    color:#2B3138;
+    max-width:66ch;
+    font-family:var(--serif);
+    font-weight:400;
+  }
+
+  /* ---------- Project deep-dives ---------- */
+  .case{
+    border-top:1px solid var(--line-paper);
+    padding:56px 0;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:40px;
+  }
+  .case:last-child{padding-bottom:0;}
+  @media(max-width:760px){
+    .case{grid-template-columns:1fr;gap:24px;}
+  }
+  .case-side{position:sticky;top:90px;align-self:start;}
+  .case-tag{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--amber-dim);
+    margin:0 0 10px;
+  }
+  .case-title{
+    font-family:var(--serif);
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 10px;
+    line-height:1.2;
+  }
+  .case-org{
+    font-size:13.5px;
+    color:var(--slate-dark);
+    margin-bottom:20px;
+  }
+  .case-diagram{
+    width:100%;
+    background:var(--ink);
+    border-radius:2px;
+    padding:14px;
+  }
+  .case-diagram svg{width:100%;height:auto;display:block;}
+  .case-body h4{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--teal);
+    text-transform:none;
+    letter-spacing:0.01em;
+    margin:26px 0 8px;
+  }
+  .case-body h4:first-child{margin-top:0;}
+  .case-body p{
+    font-size:15px;
+    color:#3A4149;
+    margin:0;
+    max-width:62ch;
+  }
+  .case-edit-note{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--slate);
+    margin-top:10px;
+    display:inline-block;
+    padding:3px 8px;
+    background:var(--paper-2);
+    border-radius:2px;
+  }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{border-left:1px solid var(--line-paper);margin-left:4px;}
+  .role{
+    position:relative;
+    padding:0 0 52px 32px;
+  }
+  .role:last-child{padding-bottom:4px;}
+  .role::before{
+    content:'';
+    position:absolute;
+    left:-5px;top:6px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--amber-dim);
+  }
+  .role-date{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--slate-dark);
+    display:block;
+    margin-bottom:6px;
+  }
+  .role-title{
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:600;
+    margin:0 0 2px;
+  }
+  .role-org{
+    font-size:14.5px;
+    color:var(--teal);
+    font-weight:500;
+    margin:0 0 14px;
+  }
+  .role ul{margin:0;padding-left:18px;}
+  .role li{margin-bottom:9px;color:#3A4149;font-size:15px;}
+  .role li:last-child{margin-bottom:0;}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px 48px;
+  }
+  @media(max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill-group h3{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-transform:none;
+    color:var(--amber-dim);
+    margin:0 0 12px;
+    font-weight:500;
+  }
+  .skill-group p{
+    margin:0;
+    font-size:14.5px;
+    color:#3A4149;
+    line-height:1.75;
+  }
+
+  /* ---------- Education / Certs ---------- */
+  .edu-item{
+    border-top:1px solid var(--line-paper);
+    padding:20px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .edu-item:last-child{border-bottom:1px solid var(--line-paper);}
+  .edu-degree{font-family:var(--serif);font-size:17px;font-weight:600;}
+  .edu-school{font-size:14px;color:var(--slate-dark);margin-top:3px;}
+  .edu-year{font-family:var(--mono);font-size:13px;color:var(--slate-dark);white-space:nowrap;}
+
+  .cert-block{margin-top:36px;}
+  .cert-block p{font-size:14.5px;color:#3A4149;max-width:60ch;}
+
+  /* ---------- Footer / contact ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:80px 0 48px;
+  }
+  footer .kicker{color:var(--amber);}
+  footer h2.section-title{color:var(--paper);}
+  footer p.contact-lede{
+    color:#C9CFD6;
+    font-size:16px;
+    max-width:48ch;
+    margin:0 0 32px;
+  }
+  .contact-row{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:56px;}
+  .contact-row a{
+    font-family:var(--mono);
+    font-size:14px;
+    text-decoration:none;
+    color:var(--paper);
+    border-bottom:1px solid var(--amber-dim);
+    padding-bottom:3px;
+  }
+  .contact-row a:hover{color:var(--amber);border-color:var(--amber);}
+  .foot-fine{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--slate);
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:24px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="nav-name" href="#top">HR</a>
+    <ul class="nav-links">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero-wave" viewBox="0 0 1000 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E8A33D" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#E8A33D" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,360 L40,360 L55,300 L70,400 L85,250 L100,360 L140,360 L155,330 L170,380 L185,300 L200,360 L260,360 L280,220 L300,420 L320,180 L340,360 L400,360 L415,340 L430,370 L445,320 L460,360 L520,360 L540,260 L560,400 L580,300 L600,360 L660,360 L675,335 L690,375 L705,315 L720,360 L780,360 L800,240 L820,410 L840,200 L860,360 L920,360 L935,335 L950,380 L965,300 L1000,360"
+      fill="none" stroke="#E8A33D" stroke-width="1.4" opacity="0.55"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Research Scientist — Ph.D.</p>
+    <h1 class="name">Hoda Rajaei</h1>
+    <p class="lede">I build multimodal perception and signal-analysis systems — from EEG and 250TB biomedical datasets to camera/LiDAR pipelines running on autonomous race vehicles at 150+ mph.</p>
+    <div class="hero-links">
+      <a href="mailto:rajaei.hoda@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/hoda-rajaei-05784839/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Hoda1394" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=UDcnkH0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap summary">
+    <p class="kicker">Summary</p>
+    <h2 class="section-title">Signal to system, lab to deployment</h2>
+    <p>Research Scientist specializing in multimodal sensor fusion and physics-informed machine learning for physical and dynamic systems, with hands-on experience integrating camera, LiDAR, and other sensor modalities into real-time perception pipelines deployed on robotic platforms. Track record spans end-to-end ML ownership — from data acquisition and pipeline engineering through model training, deployment, and production evaluation — across autonomous racing, industrial systems, and biomedical research at Caltech, MIT, and Beyond Limits AI. Comfortable operating in ambiguous, exploratory research environments and translating technical tradeoffs for cross-functional and non-technical collaborators.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="kicker">Selected work</p>
+    <h2 class="section-title">Project deep-dives</h2>
+
+    <div class="case">
+      <div class="case-side">
+        <p class="case-tag">2025 — Present</p>
+        <h3 class="case-title">Perception at 150+ mph</h3>
+        <p class="case-org">Caltech CAST Lab</p>
+        <div class="case-diagram">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="16" width="70" height="34" rx="2" fill="none" stroke="#E8A33D" stroke-width="1"/>
+            <text x="49" y="37" text-anchor="middle" fill="#E8A33D" font-family="IBM Plex Mono" font-size="9">Camera</text>
+            <rect x="14" y="60" width="70" height="34" rx="2" fill="none" stroke="#E8A33D" stroke-width="1"/>
+            <text x="49" y="81" text-anchor="middle" fill="#E8A33D" font-family="IBM Plex Mono" font-size="9">LiDAR</text>
+            <line x1="84" y1="33" x2="120" y2="55" stroke="#8B93A0" stroke-width="1"/>
+            <line x1="84" y1="77" x2="120" y2="55" stroke="#8B93A0" stroke-width="1"/>
+            <rect x="120" y="38" width="76" height="34" rx="2" fill="none" stroke="#F6F3EC" stroke-width="1"/>
+            <text x="158" y="59" text-anchor="middle" fill="#F6F3EC" font-family="IBM Plex Mono" font-size="9">Sync + Fuse</text>
+            <line x1="196" y1="55" x2="226" y2="55" stroke="#8B93A0" stroke-width="1"/>
+            <rect x="196" y="90" width="76" height="34" rx="2" fill="none" stroke="#28524F" stroke-width="1.2" transform="translate(-30,0)"/>
+            <text x="196" y="111" text-anchor="middle" fill="#7FB0AC" font-family="IBM Plex Mono" font-size="9">Detection</text>
+            <line x1="158" y1="72" x2="158" y2="90" stroke="#8B93A0" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+      <div class="case-body">
+        <h4>Problem</h4>
+        <p>Autonomous race vehicles competing at 150+ mph need to identify and track opponents with enough lead time to plan overtakes and avoid collisions — but camera and LiDAR streams arrive at different rates, resolutions, and with different noise characteristics, and any misalignment between them directly degrades downstream detection accuracy.</p>
+        <h4>Approach</h4>
+        <p>I architected a multimodal perception pipeline that synchronizes high-dimensional camera and LiDAR data in real time, then led a remote engineering team to fine-tune and deploy a camera-based object detection model tuned specifically for long-range, high-speed opponent tracking.</p>
+        <h4>Tradeoffs</h4>
+        <p><em>[Add detail here: what did you trade off between latency and accuracy? Did you consider alternative sensor fusion strategies — early vs. late fusion — and why did this approach win? Any surprises in how the model behaved at race speed versus in testing?]</em></p>
+        <h4>Result</h4>
+        <p>The detection model reached 90%+ long-range accuracy for opponent tracking, taken from prototype through full deployment on the vehicle.</p>
+        <span class="case-edit-note">edit: add a demo clip or telemetry plot if available</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-side">
+        <p class="case-tag">2019 — 2022</p>
+        <h3 class="case-title">Engineering a 250TB dataset</h3>
+        <p class="case-org">MIT · McGovern Institute</p>
+        <div class="case-diagram">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="30" fill="#E8A33D" font-family="IBM Plex Mono" font-size="9">UK Biobank</text>
+            <text x="20" y="42" fill="#8B93A0" font-family="IBM Plex Mono" font-size="9">500K individuals</text>
+            <line x1="20" y1="52" x2="20" y2="150" stroke="#8B93A0" stroke-width="1" stroke-dasharray="2,3"/>
+            <circle cx="20" cy="70" r="3" fill="#E8A33D"/>
+            <text x="32" y="74" fill="#F6F3EC" font-family="IBM Plex Mono" font-size="9">Ingest &amp; validate</text>
+            <circle cx="20" cy="98" r="3" fill="#E8A33D"/>
+            <text x="32" y="102" fill="#F6F3EC" font-family="IBM Plex Mono" font-size="9">Normalize / QC</text>
+            <circle cx="20" cy="126" r="3" fill="#E8A33D"/>
+            <text x="32" y="130" fill="#F6F3EC" font-family="IBM Plex Mono" font-size="9">Storage architecture</text>
+            <circle cx="20" cy="150" r="3" fill="#28524F"/>
+            <text x="32" y="154" fill="#7FB0AC" font-family="IBM Plex Mono" font-size="9">Model-ready</text>
+          </svg>
+        </div>
+      </div>
+      <div class="case-body">
+        <h4>Problem</h4>
+        <p>Large-scale longitudinal deep learning on brain imaging requires a data foundation that is both massive and reliable — but a 250TB dataset drawn from 500,000 individuals brings real engineering challenges in ingestion, quality control, and storage that most single-lab research pipelines are never built to handle.</p>
+        <h4>Approach</h4>
+        <p>I directed the end-to-end curation and engineering of the dataset from UK Biobank, building the high-fidelity infrastructure needed to support large-scale deep learning and longitudinal research discovery — work that underpinned 3+ downstream deep learning projects applying CNNs, Bayesian networks, and transfer learning to 2D/3D medical imaging.</p>
+        <h4>Tradeoffs</h4>
+        <p><em>[Add detail here: what storage/compute architecture did you choose and why — distributed filesystem, cloud, on-prem cluster? What broke first at that scale? How did you balance strict QC against throughput?]</em></p>
+        <h4>Result</h4>
+        <p>The dataset became the foundation for multiple research projects and contributed to two open-source neuroimaging toolboxes, while mentoring two master's students and one undergraduate through it.</p>
+        <span class="case-edit-note">edit: add a pipeline stat — e.g. ingest throughput, QC pass rate</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-side">
+        <p class="case-tag">2022 — Present</p>
+        <h3 class="case-title">Physics-informed discovery</h3>
+        <p class="case-org">Beyond Limits AI</p>
+        <div class="case-diagram">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="20" width="90" height="30" rx="2" fill="none" stroke="#28524F" stroke-width="1"/>
+            <text x="61" y="39" text-anchor="middle" fill="#7FB0AC" font-family="IBM Plex Mono" font-size="9">Physics priors</text>
+            <rect x="16" y="64" width="90" height="30" rx="2" fill="none" stroke="#E8A33D" stroke-width="1"/>
+            <text x="61" y="83" text-anchor="middle" fill="#E8A33D" font-family="IBM Plex Mono" font-size="9">Sensor data</text>
+            <line x1="106" y1="35" x2="140" y2="55" stroke="#8B93A0" stroke-width="1"/>
+            <line x1="106" y1="79" x2="140" y2="55" stroke="#8B93A0" stroke-width="1"/>
+            <rect x="140" y="40" width="100" height="30" rx="2" fill="none" stroke="#F6F3EC" stroke-width="1"/>
+            <text x="190" y="59" text-anchor="middle" fill="#F6F3EC" font-family="IBM Plex Mono" font-size="9">Deep learning arch.</text>
+            <line x1="190" y1="70" x2="190" y2="100" stroke="#8B93A0" stroke-width="1"/>
+            <text x="190" y="115" text-anchor="middle" fill="#8B93A0" font-family="IBM Plex Mono" font-size="9">Optimized sensor placement</text>
+          </svg>
+        </div>
+      </div>
+      <div class="case-body">
+        <h4>Problem</h4>
+        <p>Industrial systems generate sensor data that's expensive to collect comprehensively — every additional sensor has a cost — so predictive models need to be both accurate and efficient about which signals they rely on, and purely data-driven models often ignore physical constraints that domain experts already know to be true.</p>
+        <h4>Approach</h4>
+        <p>I designed and implemented a physics-informed deep learning architecture for AI-driven discovery in industrial systems, incorporating physical priors directly into the model rather than relying on data alone, and used it to optimize sensor placement — improving performance on critical downstream predictive tasks.</p>
+        <h4>Tradeoffs</h4>
+        <p><em>[Add detail here: which physical constraints did you encode, and how — as loss terms, architecture constraints, or something else? What did the physics-informed version get right that a pure black-box model missed?]</em></p>
+        <h4>Result</h4>
+        <p><em>[Add detail here: a concrete before/after metric — accuracy gain, sensor cost reduction, or number of systems this now runs on.]</em></p>
+        <span class="case-edit-note">edit: quantify the improvement if you have a number</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="kicker">Experience</p>
+    <h2 class="section-title">Where the work happened</h2>
+    <div class="timeline">
+
+      <div class="role">
+        <span class="role-date">Feb 2025 — Present</span>
+        <h3 class="role-title">Visiting Researcher</h3>
+        <p class="role-org">Caltech CAST Lab</p>
+        <ul>
+          <li>Architected and deployed real-time multimodal ML perception pipelines, synchronizing high-dimensional camera and LiDAR data for autonomous racing vehicles at 150+ mph, holding end-to-end latency under 20ms.</li>
+          <li>Led a remote engineering team to fine-tune and deploy a camera-based object detection model achieving 90%+ long-range accuracy for high-speed opponent tracking, prototype through deployment.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <span class="role-date">Oct 2022 — Present</span>
+        <h3 class="role-title">Senior Machine Learning Scientist</h3>
+        <p class="role-org">Beyond Limits AI, Glendale, CA</p>
+        <ul>
+          <li>Designed a physics-informed deep learning architecture for AI-driven discovery in industrial systems, including sensor-placement optimization to improve downstream predictive performance.</li>
+          <li>Engineered and fine-tuned a real-time, YOLOv8-based action recognition model for automated safety monitoring, architecture through deployment and auditability review.</li>
+          <li>Orchestrated an LLM into a production invoice management workflow, automating accounting-code assignment at 87% accuracy and evaluating model performance under live conditions.</li>
+          <li>Designed and taught deep learning and computer vision curriculum for AI Academy cohorts since 2024.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <span class="role-date">Jul 2019 — Oct 2022</span>
+        <h3 class="role-title">Research Scientist</h3>
+        <p class="role-org">MIT, McGovern Institute for Brain Research</p>
+        <ul>
+          <li>Led 3+ deep learning research projects applying CNN architectures (VGG, Inception, U-Net, MeshNet), Bayesian networks, and transfer learning to 2D/3D medical imaging.</li>
+          <li>Directed end-to-end curation and engineering of a 250TB dataset from UK Biobank spanning 500K individuals — the data infrastructure underpinning large-scale longitudinal research.</li>
+          <li>Contributed to two open-source neuroimaging toolboxes; mentored two master's students and one undergraduate.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <span class="role-date">Jan 2019 — Jul 2022</span>
+        <h3 class="role-title">Postdoctoral Research Associate</h3>
+        <p class="role-org">CATE, Florida International University, Miami, FL</p>
+        <ul>
+          <li>Co-led three research projects on brain signal analysis and connectivity-algorithm development for epileptic signal data, mentoring two Ph.D. students.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <span class="role-date">Jan 2014 — Dec 2018</span>
+        <h3 class="role-title">Graduate Research Assistant</h3>
+        <p class="role-org">CATE, Florida International University, Miami, FL</p>
+        <ul>
+          <li>Developed nonlinear signal-analysis algorithms for physiological time series, achieving 87% accuracy in automatic classification of epileptic individuals across 5+ publications.</li>
+          <li>Built the first prototype of a remote plant-health evaluation platform with StartupFIU, initiating its commercialization.</li>
+          <li>Presented research at 10+ conferences, including winning the EMBC/NSF Young Professional Award.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="kicker">Skills</p>
+    <h2 class="section-title">Toolkit</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>ML / AI</h3>
+        <p>PyTorch, TensorFlow, Keras, Scikit-learn, physics-informed deep learning, Bayesian networks, transfer learning, LLM fine-tuning &amp; integration (RAG, alignment)</p>
+      </div>
+      <div class="skill-group">
+        <h3>Transformers &amp; RL</h3>
+        <p>Built and trained transformer architectures, fine-tuned transformer-based LLMs, applied transformers to classification and RAG, RLHF concepts — via Generative AI with LLMs (Coursera) and Databricks LLM workshops</p>
+      </div>
+      <div class="skill-group">
+        <h3>Sensing &amp; Systems</h3>
+        <p>Multimodal sensor fusion (camera, LiDAR), real-time perception pipelines, robotics integration, distributed training, Docker, CI/CD</p>
+      </div>
+      <div class="skill-group">
+        <h3>Engineering</h3>
+        <p>Python, C++, Git, Linux/Bash, NumPy, Pandas, PostgreSQL, Design of Experiments, Probabilistic Programming</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <p class="kicker">Education</p>
+    <h2 class="section-title">Degrees &amp; certificates</h2>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Ph.D., Electrical and Computer Engineering</div>
+        <div class="edu-school">Florida International University · GPA 3.9</div>
+      </div>
+      <div class="edu-year">2018</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">M.Sc., Control / Instrumentation &amp; Automation Engineering</div>
+        <div class="edu-school">Shiraz University, Iran</div>
+      </div>
+      <div class="edu-year">2012</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">B.Sc., Electrical Engineering / Electronics</div>
+        <div class="edu-school">Shahid Bahonar University of Kerman, Iran</div>
+      </div>
+      <div class="edu-year">2005</div>
+    </div>
+
+    <div class="cert-block">
+      <h3 style="font-family:var(--mono);font-size:12.5px;color:var(--amber-dim);margin:0 0 10px;font-weight:500;">Certificates &amp; continuing education</h3>
+      <p>Generative AI with Large Language Models Specialization (Coursera); Databricks LLM workshops — fine-tuning, RAG, model alignment, and safety guardrails.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="kicker">Get in touch</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="contact-lede">Open to research and applied ML roles at the intersection of perception, robotics, and biomedical systems.</p>
+    <div class="contact-row">
+      <a href="mailto:rajaei.hoda@gmail.com">rajaei.hoda@gmail.com</a>
+      <a href="https://www.linkedin.com/in/hoda-rajaei-05784839/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Hoda1394" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=UDcnkH0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+    <div class="foot-fine">© 2026 Hoda Rajaei. Built as a static single-page site.</div>
+  </div>
+</footer>
+
+</body>
+</html>
