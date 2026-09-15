@@ -3,14 +3,12 @@ layout: default
 title: Home
 ---
 
-I build multimodal perception and signal-analysis systems — from EEG and 250TB biomedical datasets to camera/LiDAR pipelines running on autonomous race vehicles at 150+ mph.
-
-Research Scientist specializing in multimodal sensor fusion and physics-informed machine learning for physical and dynamic systems, with hands-on experience integrating camera, LiDAR, and other sensor modalities into real-time perception pipelines deployed on robotic platforms. Track record spans end-to-end ML ownership — from data acquisition and pipeline engineering through model training, deployment, and production evaluation — across autonomous racing, industrial systems, and biomedical research at Caltech, MIT, and Beyond Limits AI. Comfortable operating in ambiguous, exploratory research environments and translating technical tradeoffs for cross-functional and non-technical collaborators.
+I build machine learning systems that make sense of complex, high-dimensional data, backed by deep AI fluency. As a Research Scientist, I specialize in multimodal machine learning for complex, real-world systems, with experience spanning end-to-end ML ownership — from data acquisition and pipeline engineering through model training, deployment, and production evaluation — across research and industry settings at Caltech, MIT, and Beyond Limits AI. I am comfortable operating in ambiguous, exploratory research environments and communicating technical tradeoffs to both technical and non-technical stakeholders.
 
 ## Experience
 
 ### Visiting Researcher
-<span class="role-meta">Caltech CAST Lab &middot; Feb 2025 — Present</span>
+<span class="role-meta">Caltech CAST Lab &middot; Feb 2025 — March 2026</span>
 
 - Architected and deployed real-time multimodal ML perception pipelines, synchronizing high-dimensional camera and LiDAR data for autonomous racing vehicles at 150+ mph, holding end-to-end latency under 20ms.
 - Led a remote engineering team to fine-tune and deploy a camera-based object detection model achieving 90%+ long-range accuracy for high-speed opponent tracking, prototype through deployment.
