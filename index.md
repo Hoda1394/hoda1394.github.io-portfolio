@@ -56,8 +56,11 @@ I build machine learning systems that make sense of complex, high-dimensional da
 - **M.Sc., Control / Instrumentation & Automation Engineering** — Shiraz University, Iran (2012)
 - **B.Sc., Electrical Engineering / Electronics** — Shahid Bahonar University of Kerman, Iran (2005)
 
-**Certificates & continuing education:** Generative AI with Large Language Models Specialization (Coursera); Databricks LLM workshops — fine-tuning, RAG, model alignment, and safety guardrails.
+**Certificates & continuing education:**
+- Generative AI with Large Language Models Specialization (Coursera)
+- Databricks LLM workshops — fine-tuning, RAG, model alignment, and safety guardrails.
 
 ## Get in Touch
 
-Open to research and applied ML roles at the intersection of perception, robotics, and biomedical systems. Reach me at [rajaei.hoda@gmail.com](mailto:rajaei.hoda@gmail.com) or through the links above.
+Open to research and applied ML roles.
+Reach me at [rajaei.hoda@gmail.com](mailto:rajaei.hoda@gmail.com) or through the links above.
